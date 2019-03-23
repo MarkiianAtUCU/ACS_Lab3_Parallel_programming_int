@@ -4,7 +4,7 @@ import sys
 
 SINGLE_THREAD_PATH = "./build/prime_numbers_single_thread"+".exe" if os.name == 'nt' else "./build/prime_numbers_single_thread"
 MULTI_THREAD_PATH  = "./build/prime_numbers"+".exe" if os.name == 'nt' else "./build/prime_numbers"
-THREADS = [4, 8, 16, 32, 64, 256, 512]
+THREADS = [2, 4, 6, 8, 10, 12, 14, 16, 32, 64, 256, 512]
 
 
 def single_thread(number_of_iterations):
