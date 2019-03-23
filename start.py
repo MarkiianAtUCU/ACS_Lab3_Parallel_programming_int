@@ -10,14 +10,14 @@ THREADS = [4, 8, 16, 32, 64, 256, 512]
 def single_thread(number_of_iterations):
     res = []
     for i in range(number_of_iterations):
-        result = subprocess.run([SINGLE_THREAD_PATH, method_num, in_file, out_file], stdout=subprocess.PIPE)
+        result = subprocess.run([SINGLE_THREAD_PATH], stdout=subprocess.PIPE)
         res.append(int(result.stdout.decode('utf-8').strip()))
     return min(res)
 
 
 def multi_thread(number_of_iterations, number_of_threads):
     for i in range(number_of_iterations):
-        result = subprocess.run([MULTI_THREAD_PATH, method_num, in_file, out_file], stdout=subprocess.PIPE)
+        result = subprocess.run([MULTI_THREAD_PATH, number_of_threads], stdout=subprocess.PIPE)
         res.append(int(result.stdout.decode('utf-8').strip()))
 
 
