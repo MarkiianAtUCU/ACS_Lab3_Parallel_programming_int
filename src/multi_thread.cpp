@@ -17,24 +17,24 @@ void prime(int n, int thread_n, int num_of_threads, std::atomic<int> & res_threa
     for (int i = 3 + 2* thread_n; i <= n; i+=2*num_of_threads) {
 
         flag = 0;
-        if ( ((i > 10) && (i % 10 == 5)) || (i % 2 == 0)) {
+        if (((i > 10) && (i % 10 == 5)) || (i % 2 == 0)) {
             continue;
         }
 
-        for (int j = 3; j < n; j+=2) {
-            if (j*j > i) {
+        for (int j = 3; j < n; j += 2) {
+            if (j * j > i) {
                 res += 1;
                 flag = 1;
                 break;
             }
 
-            if (i % j == 0){
+            if (i % j == 0) {
                 flag = 1;
                 break;
             }
         }
         if (!flag) {
-            res +=1;
+            res += 1;
         }
     }
     res_thread += res;
