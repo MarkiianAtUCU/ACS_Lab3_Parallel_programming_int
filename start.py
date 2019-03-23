@@ -37,8 +37,13 @@ def multi_thread(number_of_iterations, number_of_threads):
     return time, res
 
 
-def check_results():
-    pass
+def check_results(results):
+    res = set(results)
+
+    if len(res) == 1:
+        print("All values are equal")
+    else:
+        print("Some values are different")
 
 
 def main(number_of_iterations):
@@ -53,7 +58,13 @@ def main(number_of_iterations):
         multi_time, multi_result = multi_thread(number_of_iterations, thread)
         multi_time_res.append([multi_time, multi_result])
 
-    print(multi_time_res)
+    all_results = []
+
+    for i in range(len(multi_time_res)):
+        all_results += multi_time_res[i][1]
+    all_results += single_res
+
+    check_results(all_results)
 
 
 if __name__ == "__main__":
