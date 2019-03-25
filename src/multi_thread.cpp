@@ -5,6 +5,7 @@
 #include <thread>
 #include <chrono>
 #include <atomic>
+#include <string>
 
 #include "time_meter.h"
 #include "config.h"
